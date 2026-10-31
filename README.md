@@ -7,10 +7,25 @@ Projeto individual de Rodrigo603, desenvolvido a partir do [repositório-modelo 
 - Tema da EDA: **FIFA World Cup All Matches (1930–2026)**, de laxmikantaroy, no Kaggle.
 - [EDA original do trabalho](notebooks/eda-rjdo.ipynb): arquivo recebido, preservado sem alterações de análise ou código.
 - O notebook de referência da professora permanece em `notebooks/arquivo-eda-original.ipynb`.
-- Neste primeiro commit, o app e os demais exemplos ainda são os do modelo da disciplina. A adaptação para os dados de futebol será feita nas próximas etapas.
+- Aula 21: app adaptado para futebol com seletor de variáveis, slider de edições e espaços reservados para os gráficos. O Dashboard 1 completo e o Dashboard 2 ficam para as próximas etapas.
 - Entregas serão registradas separadamente: Aula 21 (dados e esqueleto), Aula 22 (dashboards e documentação) e Aula 23 (finalização e publicação).
 - App público: ainda não publicado. Declaração final de uso de IA: reservada para o final, conforme solicitado.
 - Apoio de IA nesta preparação: Codex, para organização do repositório e redação desta seção. A EDA mantém seu registro próprio de uso anterior de IA.
+
+
+## Entrega da Aula 21
+
+- `notebooks/eda-rjdo.ipynb`: EDA original, preservada.
+- `notebooks/eda-com-downloads.ipynb`: mesma EDA com leitura do CSV local e célula final de exportação. As saídas foram limpas para permitir nova execução.
+- `data/clean/dataset.csv`: dados tratados da EDA de futebol (1.069 registros e 1.068 placares válidos), substituindo os dados do exemplo Heart Disease.
+- `entregas/rascunho-dashboard1.jpg`: rascunho estrutural do laboratório.
+- `app.py`: esqueleto da Aula 21; os gráficos serão implementados na Aula 22.
+
+### Reproduzir os dados
+
+Baixe o CSV `fifa_world_cup_all_matches_1930_2026.csv` do [dataset utilizado na EDA](https://www.kaggle.com/datasets/laxmikantaroy/fifa-world-cup-all-matches-19302026), versão 2, e coloque-o em `data/raw/`. O dado bruto fica local, conforme o `.gitignore` do modelo. Execute `notebooks/eda-com-downloads.ipynb` a partir da raiz do projeto ou da pasta `notebooks/`; a última célula exporta `data/clean/dataset.csv`. O app lê somente esse CSV tratado versionado.
+
+Os tratamentos preservam as decisões da EDA: grupos/cidade recodificados, zeros estruturais em prorrogação e pênaltis, ausências do intervalo preservadas, gols recalculados pelos placares de tempo integral e goleadas mantidas. A partida sem placar permanece com gols ausentes.
 
 ## Orientações do repositório-modelo
 
