@@ -1,4 +1,19 @@
-# AVD-20262-pratica-streamlit
+# Copa em Dados - AVD 2026.2
+
+Projeto individual de Rodrigo603, desenvolvido a partir do [repositório-modelo da disciplina](https://github.com/mfal-school/AVD-20262-pratica-streamlit).
+
+## Preparação inicial
+
+- Tema da EDA: **FIFA World Cup All Matches (1930–2026)**, de laxmikantaroy, no Kaggle.
+- [EDA original do trabalho](notebooks/eda.ipynb): arquivo recebido, preservado sem alterações de análise ou código.
+- O notebook de referência da professora permanece em `notebooks/arquivo-eda-original.ipynb`.
+- Neste primeiro commit, o app e os demais exemplos ainda são os do modelo da disciplina. A adaptação para os dados de futebol será feita nas próximas etapas.
+- Entregas serão registradas separadamente: Aula 21 (dados e esqueleto), Aula 22 (dashboards e documentação) e Aula 23 (finalização e publicação).
+- App público: ainda não publicado. Declaração final de uso de IA: reservada para o final, conforme solicitado.
+- Apoio de IA nesta preparação: Codex, para organização do repositório e redação desta seção. A EDA mantém seu registro próprio de uso anterior de IA.
+
+## Orientações do repositório-modelo
+
 
 Repositório utilizado para aula prática relacionada a Streamlit na disciplina Análise e Visualização de Dados da Cesar School no período de 2026.2.
 
