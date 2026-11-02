@@ -20,7 +20,7 @@ Artefatos de entrega que não são sobre uso de IA (isso fica em [`prompts/`](..
 ## Checklist — entrega final (Aula 23)
 
 - [x] Os dois rascunhos
-- [ ] `justificativa-metricas.md` revisado e validado individualmente pelo autor
+- [x] `justificativa-metricas.md` atualizado com os motivos enviados pelo autor em 01/11/2026
 
 ## Modelo de `justificativa-metricas.md`
 

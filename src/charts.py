@@ -1,4 +1,5 @@
 """Gráficos Altair; os cálculos são realizados sobre o recorte filtrado."""
+# [IA] Codex - sintaxe Altair, histogramas, mapa de calor e seleção entre gráficos.
 import altair as alt
 from src.analysis import VARS_QUANT, SHORT_LABELS
 

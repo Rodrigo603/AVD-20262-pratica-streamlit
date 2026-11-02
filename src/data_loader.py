@@ -1,4 +1,5 @@
 """Leitura do CSV tratado exportado pela EDA."""
+# [IA] Codex - adaptação da leitura do CSV e uso de cache.
 from pathlib import Path
 import pandas as pd
 import streamlit as st

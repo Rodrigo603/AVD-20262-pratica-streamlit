@@ -1,6 +1,10 @@
 # Copa em Dados - AVD 2026.2
 
-Projeto individual de Rodrigo603, desenvolvido a partir do [repositório-modelo da disciplina](https://github.com/mfal-school/AVD-20262-pratica-streamlit).
+Projeto individual de Rodrigo José Dantas de Oliveira (turma 5A), desenvolvido a partir do [repositório-modelo da disciplina](https://github.com/mfal-school/AVD-20262-pratica-streamlit).
+
+**Aplicação publicada:** [Abrir Copa em Dados](https://avd-20262-pratica-app-esinvgkzeu54ts2nfappsuq.streamlit.app/)
+
+**Repositório:** [Rodrigo603/AVD-20262-pratica-streamlit](https://github.com/Rodrigo603/AVD-20262-pratica-streamlit)
 
 ## Preparação inicial
 
@@ -8,10 +12,10 @@ Projeto individual de Rodrigo603, desenvolvido a partir do [repositório-modelo 
 - [EDA original do trabalho](notebooks/eda-rjdo.ipynb): arquivo recebido, preservado sem alterações de análise ou código.
 - O notebook de referência da professora permanece em `notebooks/arquivo-eda-original.ipynb`.
 - Aula 21: EDA, exportação dos dados, rascunho e esqueleto com seletor e slider.
-- Aula 22 (em revisão): os dois dashboards estão implementados com Altair, filtros compartilhados, quatro indicadores e três visuais no Dashboard 2.
-- Entregas serão registradas separadamente: Aula 21 (dados e esqueleto), Aula 22 (dashboards e documentação) e Aula 23 (finalização e publicação).
-- App público: ainda não publicado. Declaração final de uso de IA: reservada para o final, conforme solicitado.
-- Apoio de IA nesta preparação: Codex, para organização do repositório e redação desta seção. A EDA mantém seu registro próprio de uso anterior de IA.
+- Aula 22: os dois dashboards estão implementados com Altair, filtros compartilhados, quatro indicadores e três visuais no Dashboard 2.
+- Entregas registradas separadamente: Aula 21 (dados e esqueleto), Aula 22 (dashboards e documentação) e Aula 23 (finalização e publicação).
+- Aula 23: app publicado e testado; declaração assinada destinada à entrega pelo Classroom.
+- Apoio de IA nesta preparação: Codex, para organização do repositório e redação desta seção.
 
 
 ## Entrega da Aula 21
@@ -28,7 +32,7 @@ Baixe o CSV `fifa_world_cup_all_matches_1930_2026.csv` do [dataset utilizado na 
 
 Os tratamentos preservam as decisões da EDA: grupos/cidade recodificados, zeros estruturais em prorrogação e pênaltis, ausências do intervalo preservadas, gols recalculados pelos placares de tempo integral e goleadas mantidas. A partida sem placar permanece com gols ausentes.
 
-## Aula 22 - alterações em revisão
+## Entrega da Aula 22
 
 O Dashboard 1 possui mapa de calor de Spearman, Pearson ou Kendall e um histograma para cada variável selecionada. A seleção de variáveis controla o laboratório; os filtros de edição, fase, seleção e total de gols controlam os registros das duas abas. Registros sem placar podem ser mantidos na contagem por uma caixa de seleção, mas não entram nos cálculos que exigem esse placar.
 
@@ -54,7 +58,32 @@ python -m unittest discover -s tests -v
 
 Cinco testes automatizados verificam filtros combinados, seleção de 0/1/2+ variáveis, métodos de correlação, variável constante, recorte vazio, alternância entre abas, os denominadores dos indicadores e as quatro métricas em um subconjunto conhecido. Os gráficos de todas as variáveis também tiveram seus esquemas Altair validados. As 41 células de código da EDA adaptada foram executadas em sequência e reproduziram o mesmo CSV tratado, sem alterar a EDA original.
 
-A revisão visual local e o teste da seleção por clique estão descritos em `entregas/validacao-aula22.md`. Os testes locais não substituem o teste do app publicado da Aula 23. A documentação de prompts e a declaração final permanecem reservadas para o final, conforme combinado com o autor.
+A revisão visual local e o teste da seleção por clique estão descritos em `entregas/validacao-aula22.md`. Os testes locais não substituem o teste do app publicado da Aula 23. O registro de usos e os prompts relevantes estão em `prompts/`. A declaração assinada será enviada pelo autor diretamente no Classroom, para preservar os dados pessoais incorporados ao certificado.
+
+## Entrega da Aula 23
+
+O app está publicado no Streamlit Community Cloud a partir da branch main e de app.py. O conteúdo visual publicado foi testado com o commit da Aula 22 (2b1a1e1). O repositório inclui a documentação e as dependências de produção. A declaração assinada será entregue separadamente pelo Classroom.
+
+- [Checklist de publicação e testes](entregas/checklist-aula23.md).
+- [Evidência do app publicado](entregas/evidencia-app-publicado.jpg).
+- [Registro de usos de IA](prompts/declaracao-uso-ia.md) e [prompts relevantes](prompts/prompts-utilizados.md).
+- Declaração de uso de IA: documento assinado entregue separadamente pelo Classroom; não disponibilizado publicamente para proteger os dados pessoais do certificado.
+
+### Dependências
+
+`requirements.txt` contém somente as bibliotecas do app, nas versões testadas. Para executar os notebooks, instale também:
+
+```bash
+python -m pip install -r requirements-notebooks.txt
+```
+
+A EDA original utiliza Kaggle; a versão adaptada lê o CSV bruto local. O app publicado utiliza apenas o CSV tratado versionado.
+
+### Registro de autoria e revisão
+
+O projeto recebeu apoio de Codex para implementação, interface, rascunhos, documentação, testes, proposta de métricas e justificativas técnicas. A Skill oficial do Streamlit foi usada na Aula 22 e na preparação da Aula 23. Os trechos de código desta implementação estão marcados com `# [IA]`.
+
+O registro de usos descreve o apoio recebido. A versão assinada da declaração será enviada pelo autor no Classroom. Em 02/11/2026, o autor informou ter conversado com a professora e recebido sua concordância para prosseguir com a entrega.
 
 ## Orientações do repositório-modelo
 
@@ -68,7 +97,7 @@ Repositório-modelo das Aulas 21, 22 e 23: construção de dois dashboards em St
 
 ## Setup
 
-Requer **Python 3.11 a 3.15**. Confira a sua versão antes de começar:
+Versão validada neste projeto: **Python 3.14**. As dependências do app estão fixadas em `requirements.txt`; use essa versão também nas configurações avançadas do deploy. Confira a sua versão antes de começar:
 
 | Sistema | Verificar versão |
 | --- | --- |
@@ -133,7 +162,7 @@ streamlit run app.py
 
 O passo a passo detalhado de cada aula (Aulas 21, 22 e 23), com pré-requisitos e objetivos, está em [ROTEIRO.md](ROTEIRO.md). Comece por ele depois do Setup.
 
-**Link do app (Aula 23):** _(preencher após o deploy)_
+**Link do app (Aula 23):** [Copa em Dados](https://avd-20262-pratica-app-esinvgkzeu54ts2nfappsuq.streamlit.app/)
 
 ## IA neste projeto
 

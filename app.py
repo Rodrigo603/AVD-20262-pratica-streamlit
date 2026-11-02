@@ -1,4 +1,5 @@
 """Copa em Dados - dashboards baseados na EDA de partidas das Copas."""
+# [IA] Codex - estrutura dos dois dashboards, filtros, indicadores e interface.
 import streamlit as st
 from src.data_loader import load_data
 from src.analysis import (VARS_QUANT, filter_matches, correlation_table,

@@ -1,4 +1,5 @@
 """Filtros e cálculos utilizados pelo laboratório de análise."""
+# [IA] Codex - filtros, correlação e cálculo dos indicadores.
 import pandas as pd
 
 VARS_QUANT = {

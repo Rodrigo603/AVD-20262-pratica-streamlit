@@ -245,3 +245,7 @@ data/raw/*
 # Skills do Streamlit (symlinks para o venv; cada aluno roda `streamlit skills`)
 .claude/skills/
 .agents/skills/
+
+# Declarações pessoais: entrega privada pelo Classroom
+prompts/DECLARACAO*.pdf
+prompts/DECLARACAO*.docx

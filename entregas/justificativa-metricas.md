@@ -1,6 +1,6 @@
 # Justificativa das métricas - Dashboard 2
 
-Versão de planejamento para revisão e validação individual do autor antes do commit. Público, métricas e visuais seguem a proposta apresentada nesta conversa. As razões abaixo são justificativas técnicas submetidas à revisão, e não uma reflexão pessoal do estudante.
+A proposta inicial de público, métricas e gráficos recebeu apoio de IA. Em 01/11/2026, o autor enviou sua reflexão e os motivos das escolhas; os motivos abaixo foram transcritos desse texto. O histórico do apoio está registrado em prompts/declaracao-uso-ia.md. As definições, fórmulas e limitações técnicas complementam esses motivos.
 
 ## Público-alvo e objetivo
 
@@ -19,7 +19,7 @@ Jornalistas esportivos interessados em comparar as edições e fases da Copa do 
 
 - **Variável:** gols_totais.
 - **O que mede:** quantidade acumulada de gols no tempo integral; soma dos valores válidos no recorte.
-- **Por que foi escolhida (justificativa técnica para revisão):** contextualiza o volume de gols associado ao conjunto consultado.
+- **Por que foi escolhida (motivo enviado pelo autor):** “Entendi que o total de gols sozinho engana, porque o número de partidas muda entre as edições.”
 - **Público-alvo:** jornalistas esportivos.
 - **Qual decisão pode ser apoiada:** definir o conjunto de partidas a destacar em uma pauta e consultar seu total acumulado.
 - **O que comunica:** quantos gols foram registrados nas partidas selecionadas.
@@ -29,7 +29,7 @@ Jornalistas esportivos interessados em comparar as edições e fases da Copa do 
 
 - **Variável:** gols_totais.
 - **O que mede:** soma de gols dividida pelo número de partidas com placar válido no recorte.
-- **Por que foi escolhida (justificativa técnica para revisão):** oferece uma medida por partida, complementar ao total acumulado.
+- **Por que foi escolhida (motivo enviado pelo autor):** “A média por partida corrige isso e permite comparar edições de tamanhos diferentes.”
 - **Público-alvo:** jornalistas esportivos.
 - **Qual decisão pode ser apoiada:** escolher edições ou fases para uma comparação editorial de frequência média de gols.
 - **O que comunica:** quantos gols, em média, ocorreram em cada jogo considerado.
@@ -39,7 +39,7 @@ Jornalistas esportivos interessados em comparar as edições e fases da Copa do 
 
 - **Variável:** gols_totais.
 - **O que mede:** 100 vezes a quantidade de partidas com gols_totais >= 3 dividida pelo número de partidas com placar válido.
-- **Por que foi escolhida (justificativa técnica para revisão):** complementa a média com a frequência de jogos acima de um limite explícito de contagem.
+- **Por que foi escolhida (motivo enviado pelo autor):** “O percentual de jogos com 3+ gols mostra quão ofensivas as partidas foram”.
 - **Público-alvo:** jornalistas esportivos.
 - **Qual decisão pode ser apoiada:** selecionar recortes para uma pauta sobre frequência de partidas com ao menos três gols.
 - **O que comunica:** de cada 100 jogos do recorte, qual proporção teve três ou mais gols.
@@ -49,13 +49,15 @@ Jornalistas esportivos interessados em comparar as edições e fases da Copa do 
 
 - **Variáveis:** fulltime_score_team1 e fulltime_score_team2.
 - **O que mede:** 100 vezes a quantidade de jogos cujos dois placares são iguais dividida pelo número de partidas com placar válido.
-- **Por que foi escolhida (justificativa técnica para revisão):** acrescenta um indicador de igualdade do placar ao conjunto de medidas de gols.
+- **Por que foi escolhida (motivo enviado pelo autor):** “o percentual de empates mostra o equilíbrio entre as seleções”.
 - **Público-alvo:** jornalistas esportivos.
 - **Qual decisão pode ser apoiada:** escolher edições para uma comparação sobre frequência de empates no tempo integral.
 - **O que comunica:** a proporção de partidas com os dois placares de tempo integral iguais.
 - **Limitação:** não equivale ao campo winner; uma partida empatada no tempo integral pode ter vencedor após prorrogação ou pênaltis.
 
 ## Visuais além dos cartões
+
+**Motivo enviado pelo autor:** “Vi que a escolha do tipo de gráfico muda a leitura dos dados. Evoluções ao longo do tempo pedem uma visualização que mostre a tendência, e comparações entre categorias, como as fases, pedem outra.”
 
 1. **Linha: média de gols por edição.** Eixo x = world_cup_year; eixo y = média de gols_totais. O tooltip apresenta a quantidade de jogos válidos. Mantém o contexto das edições dos filtros laterais; clique em um ponto restringe os cartões e os outros dois gráficos. Permite consultar a sequência de médias sem comparar apenas totais.
 2. **Barras horizontais: média de gols por fase.** Eixo y = stage; eixo x = média de gols_totais, ordenada por média. O tooltip também informa o tamanho do grupo. Permite comparar fases dentro do recorte; preserva os nomes originais e não presume amostras equivalentes.

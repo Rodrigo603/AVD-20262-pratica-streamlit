@@ -1,4 +1,5 @@
 """Verificações dos filtros e estados de borda exigidos na Aula 22."""
+# [IA] Codex - verificações automatizadas dos filtros, gráficos e indicadores.
 from pathlib import Path
 import sys
 import unittest

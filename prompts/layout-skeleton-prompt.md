@@ -1,21 +1,19 @@
-# Template: rascunho de layout → esqueleto do app
+# Registro estruturado: rascunho e esqueleto
 
-Preencha cada bloco e envie à ferramenta de IA.
+Este registro foi organizado ao final a partir do trabalho realizado. Não é uma transcrição literal de um prompt de quatro blocos enviado previamente pelo aluno.
 
 ## Contexto
 
-<!-- Quem você é, qual a disciplina/projeto, qual o dataset e o objetivo do dashboard. -->
+Atividade individual de AVD 2026.2. Fork Rodrigo603/AVD-20262-pratica-streamlit. Dataset da EDA: FIFA World Cup All Matches (1930–2026), laxmikantaroy/Kaggle. Notebook original: notebooks/eda-rjdo.ipynb.
 
 ## Entrada
 
-<!-- Anexe a imagem do rascunho e cite o caminho dela no repositório (ex.: entregas/rascunho-dashboard1.jpg). Informe também as colunas do dataset e as perguntas que o dashboard deve responder. -->
+Enunciado, PDFs das Aulas 21 a 23, template de declaração e EDA enviados pelo aluno. O rascunho técnico do Dashboard 1 foi gerado durante a implementação e salvo em entregas/rascunho-dashboard1.jpg; não foi uma foto de desenho prévio feito pelo aluno.
 
-<!-- Opcional, se a ferramenta de IA não aceitar imagem ou interpretar mal o rascunho: descreva o layout em poucas linhas (ex.: sidebar à esquerda com 2 filtros; topo com 3 métricas; abaixo, 2 gráficos lado a lado). -->
+## Restrições aplicadas
 
-## Restrições
+App na raiz, leitura de data/clean/dataset.csv via src/data_loader.py, seletor de variáveis, slider de intervalo e espaços reservados para correlação e histogramas na etapa da Aula 21. Preservar EDA original e tratamentos. Implementar gráficos e abas na etapa seguinte, mantendo commits separados e submetidos à revisão do aluno.
 
-<!-- Regras que a resposta deve respeitar: biblioteca (Streamlit, plotly), arquivos a editar (app.py), carregar dados via src/data_loader.py, o que NÃO deve ser feito. -->
+## Formato produzido
 
-## Formato de saída
-
-<!-- Como você quer a resposta: código completo do app.py, só o esqueleto com comentários # TODO, explicação breve de cada seção, etc. -->
+app.py executável com Streamlit, notebook adaptado com exportação, CSV tratado e rascunho. Prompts efetivamente usados e referências do processo estão em prompts-utilizados.md e declaracao-uso-ia.md.

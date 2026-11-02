@@ -1,10 +1,12 @@
-# Prompts
+# Registros de uso de IA - atividade Streamlit
 
-Esta pasta é só sobre o uso de IA no projeto e serve para dois propósitos:
+- `declaracao-uso-ia.md`: registro factual por uso relevante, seguindo a Opção B do template.
+- `prompts-utilizados.md`: trechos literais dos pedidos do aluno, sem se apresentar como transcrição completa da conversa.
+- `layout-skeleton-prompt.md`: registro estruturado retrospectivo do escopo do esqueleto.
+- Declaração assinada: será entregue pelo autor diretamente no Classroom. O PDF não integra este repositório público.
 
-1. **Template de prompt do rascunho → esqueleto**: [layout-skeleton-prompt.md](layout-skeleton-prompt.md) traz o template de 4 blocos (Contexto, Entrada, Restrições, Formato de saída). Preencha com o caminho do seu rascunho (que fica em [../entregas/](../entregas/)), anexe a imagem e envie à ferramenta de IA.
-2. **Declaração de Uso de IA**: [declaracao-uso-ia.md](declaracao-uso-ia.md) é exigida pelo Plano de Ensino. Registre a ferramenta usada, o prompt, e o que foi aceito, modificado ou rejeitado e por quê.
+O PDF assinado e seus rascunhos são mantidos somente no computador do autor, fora do versionamento público, para preservar os dados pessoais incorporados ao certificado. O registro factual em Markdown permanece disponível. O autor informou em 02/11/2026 que conversou com a professora e que estava tudo certo para continuar a entrega.
 
-Dica: guarde aqui uma cópia dos prompts que você realmente usou, para preencher a declaração de uso de IA de forma mais simples.
+As diretrizes e o termo de responsabilidade do template foram preservados. A Skill oficial do Streamlit foi usada nas Aulas 22 e 23, e não no esqueleto inicial.
 
-Os rascunhos de layout ficam na pasta [entregas/](../entregas/) (veja [entregas/README.md](../entregas/README.md)).
+O escopo desta declaração abrange exclusivamente a atividade Streamlit das Aulas 21 a 23.
