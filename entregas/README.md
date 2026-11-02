@@ -14,13 +14,13 @@ Artefatos de entrega que não são sobre uso de IA (isso fica em [`prompts/`](..
 
 ## Checklist — Aula 22
 
-- [ ] `rascunho-dashboard2.jpg`/`.png`
-- [ ] `justificativa-metricas.md` preenchido (não só criado vazio)
+- [x] `rascunho-dashboard2.jpg`/`.png`
+- [x] `justificativa-metricas.md` preenchido para revisão e validação individual
 
 ## Checklist — entrega final (Aula 23)
 
-- [ ] Os dois rascunhos
-- [ ] `justificativa-metricas.md` completo
+- [x] Os dois rascunhos
+- [ ] `justificativa-metricas.md` revisado e validado individualmente pelo autor
 
 ## Modelo de `justificativa-metricas.md`
 

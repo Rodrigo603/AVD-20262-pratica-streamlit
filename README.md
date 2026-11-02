@@ -7,7 +7,8 @@ Projeto individual de Rodrigo603, desenvolvido a partir do [repositório-modelo 
 - Tema da EDA: **FIFA World Cup All Matches (1930–2026)**, de laxmikantaroy, no Kaggle.
 - [EDA original do trabalho](notebooks/eda-rjdo.ipynb): arquivo recebido, preservado sem alterações de análise ou código.
 - O notebook de referência da professora permanece em `notebooks/arquivo-eda-original.ipynb`.
-- Aula 21: app adaptado para futebol com seletor de variáveis, slider de edições e espaços reservados para os gráficos. O Dashboard 1 completo e o Dashboard 2 ficam para as próximas etapas.
+- Aula 21: EDA, exportação dos dados, rascunho e esqueleto com seletor e slider.
+- Aula 22 (em revisão): os dois dashboards estão implementados com Altair, filtros compartilhados, quatro indicadores e três visuais no Dashboard 2.
 - Entregas serão registradas separadamente: Aula 21 (dados e esqueleto), Aula 22 (dashboards e documentação) e Aula 23 (finalização e publicação).
 - App público: ainda não publicado. Declaração final de uso de IA: reservada para o final, conforme solicitado.
 - Apoio de IA nesta preparação: Codex, para organização do repositório e redação desta seção. A EDA mantém seu registro próprio de uso anterior de IA.
@@ -19,13 +20,41 @@ Projeto individual de Rodrigo603, desenvolvido a partir do [repositório-modelo 
 - `notebooks/eda-com-downloads.ipynb`: mesma EDA com leitura do CSV local e célula final de exportação. As saídas foram limpas para permitir nova execução.
 - `data/clean/dataset.csv`: dados tratados da EDA de futebol (1.069 registros e 1.068 placares válidos), substituindo os dados do exemplo Heart Disease.
 - `entregas/rascunho-dashboard1.jpg`: rascunho estrutural do laboratório.
-- `app.py`: esqueleto da Aula 21; os gráficos serão implementados na Aula 22.
+- `app.py`: o esqueleto está no commit da Aula 21; a versão atual acrescenta o laboratório da Aula 22.
 
 ### Reproduzir os dados
 
 Baixe o CSV `fifa_world_cup_all_matches_1930_2026.csv` do [dataset utilizado na EDA](https://www.kaggle.com/datasets/laxmikantaroy/fifa-world-cup-all-matches-19302026), versão 2, e coloque-o em `data/raw/`. O dado bruto fica local, conforme o `.gitignore` do modelo. Execute `notebooks/eda-com-downloads.ipynb` a partir da raiz do projeto ou da pasta `notebooks/`; a última célula exporta `data/clean/dataset.csv`. O app lê somente esse CSV tratado versionado.
 
 Os tratamentos preservam as decisões da EDA: grupos/cidade recodificados, zeros estruturais em prorrogação e pênaltis, ausências do intervalo preservadas, gols recalculados pelos placares de tempo integral e goleadas mantidas. A partida sem placar permanece com gols ausentes.
+
+## Aula 22 - alterações em revisão
+
+O Dashboard 1 possui mapa de calor de Spearman, Pearson ou Kendall e um histograma para cada variável selecionada. A seleção de variáveis controla o laboratório; os filtros de edição, fase, seleção e total de gols controlam os registros das duas abas. Registros sem placar podem ser mantidos na contagem por uma caixa de seleção, mas não entram nos cálculos que exigem esse placar.
+
+O mapa informa o número de pares válidos no tooltip. Variáveis constantes ou sem pares suficientes aparecem com coeficiente indefinido. As distribuições mostram válidos, ausentes, média e mediana; não há imputação adicional no aplicativo.
+
+A identidade visual usa os tons roxos da EDA por meio de `.streamlit/config.toml`, sem CSS personalizado. A leitura do CSV utiliza `@st.cache_data` com validade de uma hora.
+
+### Dashboard 2 - indicadores para jornalistas esportivos
+
+O painel apresenta quatro métricas de tempo integral: gols nas partidas selecionadas, média de gols por partida, percentual de partidas com três ou mais gols e percentual de empates. As fórmulas e as justificativas técnicas para revisão individual estão em [entregas/justificativa-metricas.md](entregas/justificativa-metricas.md).
+
+Os três visuais são: média de gols por edição (linha), média por fase (barras horizontais) e proporção de empates e placares não empatados por edição (barras empilhadas a 100%). O rascunho está em [entregas/rascunho-dashboard2.jpg](entregas/rascunho-dashboard2.jpg).
+
+Um clique em uma edição no primeiro gráfico filtra os cartões e os dois gráficos seguintes. Shift + clique permite selecionar várias edições; clique duplo no fundo do gráfico limpa a seleção. O gráfico de linha mantém o contexto dos filtros laterais. Edições de uma seleção anterior que deixaram de pertencer ao recorte lateral são ignoradas.
+
+As quatro métricas excluem a partida sem placar tanto da soma quanto dos denominadores. Um recorte sem partidas válidas exibe uma mensagem em lugar dos cartões. Empate aqui é igualdade do placar de tempo integral, e não o desfecho final após prorrogação ou pênaltis. Time 1/2 não são usados como mandante/visitante.
+
+### Verificações
+
+```bash
+python -m unittest discover -s tests -v
+```
+
+Cinco testes automatizados verificam filtros combinados, seleção de 0/1/2+ variáveis, métodos de correlação, variável constante, recorte vazio, alternância entre abas, os denominadores dos indicadores e as quatro métricas em um subconjunto conhecido. Os gráficos de todas as variáveis também tiveram seus esquemas Altair validados. As 41 células de código da EDA adaptada foram executadas em sequência e reproduziram o mesmo CSV tratado, sem alterar a EDA original.
+
+A revisão visual local e o teste da seleção por clique estão descritos em `entregas/validacao-aula22.md`. Os testes locais não substituem o teste do app publicado da Aula 23. A documentação de prompts e a declaração final permanecem reservadas para o final, conforme combinado com o autor.
 
 ## Orientações do repositório-modelo
 
